@@ -2,6 +2,7 @@ const vm = Vue.createApp({
         data() {
         return {
             firstName: 'Roge',
+            middleName: '',
             lastName: 'Mohi',
             url: 'https://triana.salesianos.edu/',
             raw_url: '<a href="https://google.com" target= "_blank">Google</a>' ,
@@ -11,7 +12,7 @@ const vm = Vue.createApp({
     },
     methods: {
         fullName() {
-            return  `${this.firstName.toUpperCase()} ${this.lastName}`
+            return  `${this.firstName.toUpperCase()} ${this.middleName} ${this.lastName}`
         },
 
         increment() {
@@ -23,7 +24,6 @@ const vm = Vue.createApp({
         },
 
         updateUserName(str, event) {
-            event.preventDefault()
             console.log(str)
             this.userName = event.target.value
         }

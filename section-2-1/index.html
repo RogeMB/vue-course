@@ -22,11 +22,14 @@
       <label>First Name</label>
       <input type="text" v-model="firstName" />
 
+      <label for="">Middle Name</label>
+      <input type="text" @keyup="updateMiddleName" name="" id="">
+
       <label>Last Name</label>
       <input type="text" :value="lastName" @input="updateLastName"/> <!-- * Esto hace lo mismo pero separando los procesos de v-model-->
 
       <label>User Name</label>
-      <input type="text" :value="userName" @input="updateUserName('Last name event triggered!', $event)"/> <!-- * Esto hace lo mismo pero separando los procesos de v-model-->
+      <input type="text" :value="userName" @input.prevent="updateUserName('Last name event triggered!', $event)"/> <!-- * Esto hace lo mismo pero separando los procesos de v-model-->
 
       <button type="button" v-on:click="increment">Increment</button>
       <button type="button" @click="age--">Decrement</button>
