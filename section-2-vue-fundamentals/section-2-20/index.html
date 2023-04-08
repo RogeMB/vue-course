@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <title>VueJS Course</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <div id="app">
+    <p v-if="mode == 1">Showing v-if directive content</p>
+    <template v-else-if="mode == 2">
+      <p>Bonus Content</p>
+      <h4>Showing v-else-if. Requiere un elemento con v-if justo antes.</h4>
+    </template>
+    <p v-else="">Showing v-else. Es la de por defecto si la anterior falla. Podemos personalizarla igual. Requiere un elemento con v-if o v-else-if justo antes.</p>
+    
+
+    <i v-show="mode == 1">v-show. Similar a los v-if, pero sin eliminar el elemento del documento, le añade un display:none. </i>
+
+
+    <select name="" id="" v-model="mode">
+      <option value="1">v-if</option>
+      <option value="2">v-else-if</option>
+      <option value="3">v-else</option>
+    </select>
+    
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
